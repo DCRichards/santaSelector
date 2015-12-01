@@ -29,6 +29,8 @@ var userForm = (function($) {
     
     var onAddSuccess = function(data, textStatus, jqXHR) {
         $('.userlist').html(data);
+        nameField.val('');
+        emailField.val('');
     };
     
     var onAddFailed = function(jqXHR, textStatus, errorThrown) {
