@@ -55,3 +55,15 @@ ul.list-group li {
     background: #a0271c;
 }
 
+ul.list-group li:hover {
+    background: #760d03;
+}
+
+ul.list-group li i.fa {
+    font-size: 1.5em;
+    float: right;
+}
+
+ul.list-group li i.fa:hover {
+    color: #d12f20;
+}

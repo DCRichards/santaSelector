@@ -15,6 +15,16 @@ var RequestHandler = (function($) {
         }); 
     };
     
+    var getMatches = function(user, succ, err) {
+      $.ajax({
+            type: "GET",
+            url: URL + '/matches/all',
+            error: err,
+            success: succ,
+            dataType: 'html'
+        }); 
+    };
+    
     return {
         postUser: postUser
     };

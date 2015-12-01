@@ -1,4 +1,4 @@
-from app import app, persistence
+from app import app, persistence, match
 from flask import render_template, url_for, request
 import json
 
@@ -8,5 +8,12 @@ def root():
 
 @app.route('/user', methods=['POST'])
 def post():
-    persistence.add_user(json.loads(request.data))
-    return render_template('userlist.html', users=persistence.get_users())
+    user_dict = json.loads(request.data)
+    persistence.add_user(user_dict)
+    userList = persistence.get_users()
+    print match.get_match_for_users(userList)
+    return render_template('userlist.html', users=userList)
+
+@app.route('/match/<int:id>', methods=['GET'])
+def get():
+    return None;

@@ -1,13 +1,15 @@
-var userForm = (function($) {
+var userForm = (function($, userList) {
     
     var addButton;
     var nameField;
     var emailField;
+    var usersList;
     
     var init = function() {
         addButton = $('.btn-add-user');
         nameField = $('input.user-name');
         emailField = $('input.user-email');
+        usersList = $('.userlist');
         addButton.click(onAddClicked);
     };
     
@@ -28,17 +30,19 @@ var userForm = (function($) {
     };
     
     var onAddSuccess = function(data, textStatus, jqXHR) {
-        $('.userlist').html(data);
+        usersList.html(data);
         nameField.val('');
         emailField.val('');
+        // we need to init here as the DOM has changed
+        userList.init();
     };
     
     var onAddFailed = function(jqXHR, textStatus, errorThrown) {
         console.error(jqXHR);
-    }
+    };
     
     return {
         init: init
     };
     
-}(jQuery));
+}(jQuery, userList));
