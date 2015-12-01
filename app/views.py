@@ -8,6 +8,5 @@ def root():
 
 @app.route('/user', methods=['POST'])
 def post():
-    print json.loads(request.data)
     persistence.add_user(json.loads(request.data))
     return render_template('userlist.html', users=persistence.get_users())

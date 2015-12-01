@@ -34,7 +34,24 @@ h1 i.fa {
     background: #FFF;
 }
 
+.container .btn:hover {
+    color: #fff;
+    background: #19772a;
+}
+
 .userlist {
-    margin-top: 30px;
+    margin-top: 20px;
+}
+
+ul.list-group {
+    font-size: 1.2em;
+}
+
+ul.list-group li {
+    text-align: center;
+    border-color: #d12f20;
+    border-width: 2px;
+    color: #fff;
+    background: #a0271c;
 }
 
