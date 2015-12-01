@@ -1,0 +1,40 @@
+body {
+    background: #d12f20;
+}
+
+h1 {
+    font-size: 4em;
+    color: #FFF;
+    text-align: center;
+    font-family: 'Source Serif Pro', serif;
+}
+
+h1 i.fa {
+    color: #0b6d1d;
+}
+
+.container {
+    padding-top: 80px;
+    margin: 0 auto;
+    width: 70%;
+}
+
+.container .input-group {
+    border: none;
+}
+
+.container .input-group-addon {
+    background: #FFF;
+}
+
+.container .btn {
+    border: none;
+    font-size: 1.2em;
+    color: #333;
+    background: #FFF;
+}
+
+.userlist {
+    margin-top: 30px;
+}
+
