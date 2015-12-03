@@ -5,7 +5,7 @@ A simple secret santa picker written in [Flask](http://flask.pocoo.org/).
 
 ## About
 
-This project was born thanks to a combination of my excitement for Christmas and a desire to move outside of my Node.js comfort zone and start writing web applications and microservices in Python.
+This project was born thanks to a combination of my excitement for Christmas and my urge to write larger applications in python.
 
 ## Setup
 
