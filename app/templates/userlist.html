@@ -6,7 +6,7 @@
             {% for user in users %}
             <li class="list-group-item user-id-{{user.id}}">
                 {{user.name}} ({{user.email}})
-            <i class="fa fa-times-circle"></i>
+            <i class="fa fa-times-circle btn-delete btn-delete-{{user.id}}"></i>
             </li>
             {% endfor %}
         </ul>

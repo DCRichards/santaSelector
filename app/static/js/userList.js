@@ -2,23 +2,22 @@ var userList = (function($) {
     
     var usersList;
     var userListItems;
+    var deleteButton;
     
     var init = function() {
         usersList = $('.userlist');
         userListItems = $('li.list-group-item');
+        deleteButton = $('.btn-delete');
         userListItems.click(onListItemClicked);
+        deleteButton.click(onDeleteClicked);
     };
     
     var onListItemClicked = function(e) {
         var userId = e.currentTarget.classList[1].split('-')[2];
     };
     
-    var onMatchSuccess = function(data, textStatus, jqXHR) {
-        
-    };
-    
-    var onMatchFailed = function(jqXHR, textStatus, errorThrown) {
-        console.error(jqXHR);
+    var onDeleteClicked = function(e) {
+        var userId = e.currentTarget.classList[3].split('-')[2];
     };
     
     return {

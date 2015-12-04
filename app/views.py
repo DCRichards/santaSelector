@@ -14,6 +14,13 @@ def post():
     print match.get_match_for_users(userList)
     return render_template('userlist.html', users=userList)
 
+@app.route('/user/<int:id>', methods=['DELETE'])
+def del_user():
+    # Stub
+    return None;
+
 @app.route('/match/<int:id>', methods=['GET'])
 def get():
+    # Stub
     return None;
+

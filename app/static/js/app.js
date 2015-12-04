@@ -5,5 +5,5 @@
         userForm.init();
         userList.init();
     });
-    
+        
 }(jQuery, RequestHandler, userForm, userList));
