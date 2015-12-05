@@ -1,23 +1,23 @@
-from app import app, persistence
+from app import app
 import random
 
 def get_match_for_users(userList):
-    matchList = []
-    pendingAssign = list(userList)
-    pendingMatch = list(userList)
+    matchList = {}
+    pendingAssign = dict(userList)
+    pendingMatch = dict(userList)
     if len(userList) > 1:
         while len(pendingAssign):
-            assignUser = random.choice(pendingAssign)
-            matchUser = random.choice(pendingMatch)
+            assignUserKey = random.choice(pendingAssign.keys())
+            matchUserKey = random.choice(pendingMatch.keys())
             # reselect if we've picked ourselves
-            while assignUser['id'] == matchUser['id']:
-                matchUser = random.choice(pendingMatch)
+            while assignUserKey == matchUserKey:
+                matchUserKey = random.choice(pendingMatch.keys())
             # add our match to list
-            matchList.append({assignUser['id']:matchUser['id']})
+            matchList[assignUserKey] = matchUserKey
             # remove from respective lists
-            pendingAssign.remove(assignUser)
-            pendingMatch.remove(matchUser)
+            del pendingAssign[assignUserKey]
+            del pendingMatch[matchUserKey]
         return matchList
     else:
         return None
-        
+    

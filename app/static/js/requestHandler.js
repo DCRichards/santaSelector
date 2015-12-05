@@ -2,6 +2,7 @@ var RequestHandler = (function($) {
     
     // TODO: place this in a config
     var URL = 'http://127.0.0.1:5000';
+    var TIMEOUT = 5000
     
     var postUser = function(user, succ, err) {
       $.ajax({
@@ -11,17 +12,8 @@ var RequestHandler = (function($) {
             success: succ,
             data: JSON.stringify(user),
             dataType: 'html',
-            contentType: 'application/json'
-        }); 
-    };
-    
-    var getMatch = function(id, succ, err) {
-      $.ajax({
-            type: "GET",
-            url: URL + '/match/'+id,
-            error: err,
-            success: succ,
-            dataType: 'html'
+            contentType: 'application/json',
+            timeout: TIMEOUT
         }); 
     };
     
@@ -31,7 +23,19 @@ var RequestHandler = (function($) {
             url: URL + '/user/'+id,
             error: err,
             success: succ,
-            dataType: 'html'
+            dataType: 'html',
+            timeout: TIMEOUT
+        }); 
+    };
+    
+    var getMatch = function(id, succ, err) {
+      $.ajax({
+            type: "GET",
+            url: URL + '/match/'+id,
+            error: err,
+            success: succ,
+            dataType: 'application/json',
+            timeout: TIMEOUT
         }); 
     };
     

@@ -4,9 +4,6 @@ userList = {}
 matchList = {}
 idIter = 0
 
-def add_match(user, match):
-    matchList[user] = match
-
 def add_user(user):
     global idIter
     userList[idIter] = user
@@ -19,7 +16,15 @@ def get_users():
     return userList
 
 def get_match(user):
-    return matchList[user]
-
+    try:
+        return matchList[user]
+    except KeyError:
+        return None
+    
 def get_all_matches():
     return matchList
+
+def add_matches(matches):
+    global matchList
+    matchList = matches
+    
