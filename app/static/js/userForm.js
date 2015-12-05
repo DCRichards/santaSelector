@@ -37,7 +37,7 @@ var userForm = (function($, userList) {
         userList.init();
     };
     
-    var onAddFailed = function(jqXHR, textStatus, errorThrown) {
+    var onAddFailed = function(jqXHR, textStatus, error) {
         console.error(jqXHR);
     };
     

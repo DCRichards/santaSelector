@@ -3,10 +3,10 @@
     </div>
     <div class="col-md-8">
         <ul class="list-group">
-            {% for user in users %}
-            <li class="list-group-item user-id-{{user.id}}">
-                {{user.name}} ({{user.email}})
-            <i class="fa fa-times-circle btn-delete btn-delete-{{user.id}}"></i>
+            {% for userId in users %}
+            <li class="list-group-item user-id-{{userId}}">
+                {{users[userId].name}} ({{users[userId].email}})
+            <i class="fa fa-times-circle btn-delete btn-delete-{{userId}}"></i>
             </li>
             {% endfor %}
         </ul>

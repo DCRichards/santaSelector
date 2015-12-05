@@ -1,17 +1,19 @@
 from app import app
 
-userList = []
+userList = {}
 matchList = {}
-id_iter = 0
+idIter = 0
 
 def add_match(user, match):
     matchList[user] = match
 
 def add_user(user):
-    global id_iter
-    user['id'] = id_iter
-    id_iter += 1
-    userList.append(user)
+    global idIter
+    userList[idIter] = user
+    idIter += 1
+    
+def remove_user(userId):
+    del userList[userId]
     
 def get_users():
     return userList

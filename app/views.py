@@ -11,16 +11,15 @@ def post():
     user_dict = json.loads(request.data)
     persistence.add_user(user_dict)
     userList = persistence.get_users()
-    print match.get_match_for_users(userList)
-    return render_template('userlist.html', users=userList)
+    return render_template('userlist.html', users=userList), 201
 
 @app.route('/user/<int:id>', methods=['DELETE'])
-def del_user():
-    # Stub
-    return None;
+def del_user(id):
+    persistence.remove_user(id)
+    userList = persistence.get_users()
+    return render_template('userlist.html', users=userList)
 
 @app.route('/match/<int:id>', methods=['GET'])
-def get():
-    # Stub
-    return None;
-
+def get(id):
+    # Stub endpoint
+    return ('',204)

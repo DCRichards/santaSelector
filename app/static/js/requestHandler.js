@@ -15,10 +15,20 @@ var RequestHandler = (function($) {
         }); 
     };
     
-    var getMatches = function(user, succ, err) {
+    var getMatch = function(id, succ, err) {
       $.ajax({
             type: "GET",
-            url: URL + '/matches/all',
+            url: URL + '/match/'+id,
+            error: err,
+            success: succ,
+            dataType: 'html'
+        }); 
+    };
+    
+    var deleteUser = function(id, succ, err) {
+      $.ajax({
+            type: "DELETE",
+            url: URL + '/user/'+id,
             error: err,
             success: succ,
             dataType: 'html'
@@ -26,7 +36,9 @@ var RequestHandler = (function($) {
     };
     
     return {
-        postUser: postUser
+        postUser: postUser,
+        getMatch: getMatch,
+        deleteUser: deleteUser
     };
     
 }(jQuery));
