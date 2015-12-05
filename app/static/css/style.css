@@ -40,7 +40,19 @@ h1 i.fa {
 }
 
 .userlist {
-    margin-top: 20px;
+    margin-top: 10px;
+}
+
+.userlist h2 {
+    text-align: center;
+    color: #FFF;
+    font-family: 'Source Serif Pro', serif;
+}
+
+.userlist .no-users {
+    color: #f57575;
+    text-align: center;
+    font-size: 1.2em;
 }
 
 ul.list-group {
@@ -66,4 +78,18 @@ ul.list-group li i.fa {
 
 ul.list-group li i.fa:hover {
     color: #d12f20;
+}
+
+.error-popup {
+    font-size: 1.2em;
+    color: #f8ebe5;
+    border-color: #ff6d4b;
+    background: #ff6d4b;
+    display: none;
+    text-align: center;
+}
+
+.error-popup i {
+    float: left;
+    font-size: 1.3em;
 }

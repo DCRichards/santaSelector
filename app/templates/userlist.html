@@ -1,14 +1,25 @@
 <div class="row">
+    <div class="col-md-12">
+    <h2>PARTICIPANTS</h2>
+    </div>
+</div>
+<div class="row">
     <div class="col-md-2">
     </div>
     <div class="col-md-8">
+        {% if users %}
         <ul class="list-group">
             {% for userId in users %}
             <li class="list-group-item user-id-{{userId}}">
-                {{users[userId].name}} ({{users[userId].email}})
+                {{users[userId].name}} {{'(%s)' % users[userId].email if users[userId].email}}
             <i class="fa fa-times-circle btn-delete btn-delete-{{userId}}"></i>
             </li>
             {% endfor %}
         </ul>
+        {% else %}
+        <div class="no-users">
+            Where is everybody? Add people above to start matching!
+        </div>
+        {% endif %}
     </div>
 </div>
