@@ -6,7 +6,7 @@ h1 {
     font-size: 4em;
     color: #FFF;
     text-align: center;
-    font-family: 'Source Serif Pro', serif;
+    font-family: 'Libre Baskerville', serif;
 }
 
 h1 i.fa {
@@ -46,7 +46,7 @@ h1 i.fa {
 .userlist h2 {
     text-align: center;
     color: #FFF;
-    font-family: 'Source Serif Pro', serif;
+    font-family: 'Libre Baskerville', serif;
 }
 
 .userlist .no-users {
