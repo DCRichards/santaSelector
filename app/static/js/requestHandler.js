@@ -34,7 +34,7 @@ var RequestHandler = (function($) {
             url: URL + '/match/'+id,
             error: err,
             success: succ,
-            dataType: 'application/json',
+            dataType: 'json',
             timeout: TIMEOUT
         }); 
     };

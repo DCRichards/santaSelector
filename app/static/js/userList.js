@@ -15,7 +15,8 @@ var userList = (function($, RequestHandler) {
     var onListItemClicked = function(e) {
         // ensure click only fires if we're clicking the item
         if (!$(e.target).is('.btn-delete')) {
-            var userId = e.currentTarget.classList[1].split('-')[2];   
+            var userId = e.currentTarget.classList[1].split('-')[2];
+            RequestHandler.getMatch(userId, onGetMatchSuccess, onGetMatchFailed);
         }
     };
     
@@ -31,7 +32,15 @@ var userList = (function($, RequestHandler) {
     };
     
     var onDeleteError = function(jqXHR, textStatus, error) {
-        console.error(jqXHR);
+        console.error('Error: ' + jqXHR.status + ' ' + jqXHR.statusText);
+    };
+    
+    var onGetMatchSuccess = function(data, textStatus, jqXHR) {
+        alert('your match is: ' + data.name + ' ' + data.email);
+    };
+    
+    var onGetMatchFailed = function(jqXHR, textStatus, error) {
+        console.error('Error: ' + jqXHR.status + ' ' + jqXHR.statusText);
     };
     
     return {

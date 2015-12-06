@@ -15,10 +15,16 @@ def remove_user(userId):
 def get_users():
     return userList
 
+def get_user(user):
+    try:
+        return userList[user]
+    except (KeyError, TypeError):
+        return None
+
 def get_match(user):
     try:
         return matchList[user]
-    except KeyError:
+    except (KeyError, TypeError):
         return None
     
 def get_all_matches():

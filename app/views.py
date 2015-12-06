@@ -29,9 +29,8 @@ def del_user(id):
 @app.route('/match/<int:id>', methods=['GET'])
 def get(id):
     match = persistence.get_match(id)
-    res_dict = {'%i' % id:match}
-    # could be 0 so we need to specify None
+    user = persistence.get_user(match)
     if match != None:
-        return jsonify(**res_dict)
+        return jsonify(**user)
     else:
         return ('',404)
