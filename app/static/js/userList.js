@@ -3,11 +3,15 @@ var userList = (function($, RequestHandler) {
     var usersList;
     var userListItems;
     var deleteButton;
+    var matchModal;
+    var modalText;
     
     var init = function() {
         usersList = $('.userlist');
         userListItems = $('li.list-group-item');
         deleteButton = $('.btn-delete');
+        matchModal = $('.match-modal-sm');
+        modalText = $('.match-text');
         userListItems.click(onListItemClicked);
         deleteButton.click(onDeleteClicked);
     };
@@ -36,7 +40,8 @@ var userList = (function($, RequestHandler) {
     };
     
     var onGetMatchSuccess = function(data, textStatus, jqXHR) {
-        alert('your match is: ' + data.name + ' ' + data.email);
+        modalText.text(data.name + ' ' + data.email);
+        matchModal.modal('show');
     };
     
     var onGetMatchFailed = function(jqXHR, textStatus, error) {

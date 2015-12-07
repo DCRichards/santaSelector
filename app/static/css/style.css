@@ -93,3 +93,19 @@ ul.list-group li i.fa:hover {
     float: left;
     font-size: 1.3em;
 }
+
+.modal-header h4 {
+    text-align: center;
+}
+
+.modal-header h4 i.fa {
+    color: #0b6d1d;
+}
+
+.match-text {
+    margin: 10px;
+    color: #fff;
+    background: #d12f20;
+    text-align: center;
+    font-size: 1.5em;
+}

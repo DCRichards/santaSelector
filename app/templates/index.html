@@ -47,9 +47,22 @@
             </div>
             </div>
             <br />
-            <!-- santa list -->
             <div class="userlist">
                 {% include "userlist.html" ignore missing with context %}
+            </div>
+            <div class="modal fade match-modal-sm" tabindex="-1" role="dialog" aria-labelledby="matchModalLabel">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title"><i class="fa fa-tree"></i>&nbsp;You're matched with...</h4>
+                        </div>
+                        <div class="modal-body match-text">
+                        
+                        </div>
+                    </div>
+                    
+                </div>
             </div>
         </div>
 
