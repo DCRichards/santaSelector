@@ -2,6 +2,8 @@
 
 A simple secret santa picker written in [Flask](http://flask.pocoo.org/).
 
+![](https://raw.githubusercontent.com/DCRichards/santaSelector/master/screenshots/example.png)
+
 
 ## About
 
